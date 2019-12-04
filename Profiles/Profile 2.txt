@@ -1,0 +1,18 @@
+itemName = "profile 2"  # required
+size = "profile 2"  # required
+itemColor = "profile 2" # required
+itemType = "profile 2"  # required # example: pants
+
+name = "Yo"
+email = "Mama@gmail.com"
+telephone = "5104206969"
+address = "551 Stevenson Service Road"
+aptUnitEtc = ""
+zipcode = "95064"
+city = "Santa Cruz"
+state = "CA"
+country = "USA"
+creditCardNumber = "69694200696964200"
+experationMonth = "07"
+experationYear = "00"
+cvv = "pp dos"
