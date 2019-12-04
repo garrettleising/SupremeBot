@@ -9,6 +9,7 @@ def readFile(toRead):
     splice = toRead.split('"')
     i = 1
     for key in keyList:
+        #check if splice[i] exists. if not returns nothing instead of OrderedProfile.
         orderedProfile[key] = splice[i]
         i+=2
     return orderedProfile
@@ -27,6 +28,10 @@ def addProfile():
 def removeProfile():
     print("Not done yet!")
 
+def printProfile():
+    for instance in profiles:
+        print(instance)
+
 def run():
     for instance in profiles:
         print(instance)
@@ -38,4 +43,5 @@ def run():
         #if failed go back baby
 
 readProfile()
+printProfile()
 #make some gui to go between add, read, delete, and run.
