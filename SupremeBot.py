@@ -12,28 +12,28 @@ from pytz import timezone
 name = ""
 email = ""
 telephone = ""
-address = ""
+address = "551 Stevenson Service Road"
 aptUnitEtc = ""
-zipcode = ""
-city = ""
-state = ""
-country = ""
+zipcode = "95064"
+city = "Santa Cruz"
+state = "CA"
+country = "USA"
 creditCardNumber = ""
 experationMonth = ""
 experationYear = ""
 cvv = ""
-itemName = ""
 
-size = ""
-itemColor = ""
-itemType = "" # example: pants
+itemName = ""  # required
+size = ""  # required
+itemColor = ""  # required
+itemType = ""  # required # example: pants
 
 linkToSupreme = "https://www.supremenewyork.com"
 linkToStore = "https://www.supremenewyork.com/shop/all/" + itemType
 
-chrome_path = r'C:/Users/Garre/Desktop/Selenium Bot/Chrome Driver/chromedriver.exe'
+chrome_path = r'C:\Users\Garre\Desktop\Python\Selenium Bot\Chrome Driver\chromedriver.exe'
 
-loop = True
+timeCycle = False  # True if you want the bot to wait for a specific time//False otherwise
 
 pacific = timezone('US/Pacific')
 USPacific_time = datetime.now(pacific)
@@ -41,7 +41,7 @@ USPacific_time = datetime.now(pacific)
 print(USPacific_time.strftime('%H:%M:%S'))
 
 # waits for the correct time to run the bot
-while (USPacific_time.strftime('%H:%M:%S') != "07:59:25"):
+while (USPacific_time.strftime('%H:%M:%S') != "07:59:25" and timeCycle):
     time.sleep(0.5)
     USPacific_time = datetime.now(pacific)
 
@@ -57,11 +57,13 @@ driver = webdriver.Chrome(chrome_path, chrome_options=options)
 driver.get(linkToStore)
 
 # consantly checks for the item and refreshes the page
+
+loop = True #Don't change ever
 while loop:
     productNames = driver.find_elements_by_class_name("name-link")
-
     for option in productNames:
         if re.search(itemName, option.text, re.IGNORECASE):
+            print(option.text)
             option.click()
             loop = False
             break
@@ -111,12 +113,12 @@ order_billing_state = driver.find_element_by_id("order_billing_state")
 state_options = order_billing_state.find_elements_by_tag_name("option")
 order_billing_country = driver.find_element_by_id("order_billing_country")
 country_options = order_billing_country.find_elements_by_tag_name("option")
-cnb = driver.find_element_by_id("cnb")
+creditCardNumberr = driver.find_element_by_id("rnsnckrn")
 credit_card_month = driver.find_element_by_id("credit_card_month")
 creditMonth_options = credit_card_month.find_elements_by_tag_name("option")
 credit_card_year = driver.find_element_by_id("credit_card_year")
 creditYear_options = credit_card_year.find_elements_by_tag_name("option")
-vval = driver.find_element_by_id("vval")
+vval = driver.find_element_by_id("orcer")
 iCheckHelper = driver.find_elements_by_class_name("iCheck-helper")
 iCheckHelper = iCheckHelper[1]
 
@@ -135,7 +137,7 @@ for option in country_options:
     if (option.text == country):
         option.click()
         break
-cnb.send_keys(creditCardNumber)
+creditCardNumberr.send_keys(creditCardNumber)
 for option in creditMonth_options:
     if (option.text == experationMonth):
         option.click()
