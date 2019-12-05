@@ -10,6 +10,7 @@ from datetime import datetime
 from pytz import timezone
 
 def doIt(profile):
+    print(profile["name"])
     itemName = profile["itemName"]
     size = profile["size"]
     itemColor = profile["itemColor"]

@@ -1,4 +1,5 @@
-#import SupremeBot
+import threading
+from SupremeBot import doIt
 from os import walk
 from os import path
 
@@ -35,8 +36,8 @@ def printProfile():
 
 def run():
     for instance in profiles:
-        print(instance)
-        #SupremeBot.doIt(instance)
+        task = threading.Thread(target = doIt, args = (instance,))
+        task.start()
 
 readProfile()
 run()
