@@ -38,8 +38,6 @@ def run():
         print(instance)
         #SupremeBot.doIt(instance)
 
-print("Check?")
-print(profiles)
-printProfile()
+readProfile()
 run()
 #make some gui to go between add, read, delete, and run.
