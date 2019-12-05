@@ -1,3 +1,5 @@
+import threading
+from SupremeBot import doIt
 from os import walk
 from os import path
 
@@ -34,14 +36,9 @@ def printProfile():
 
 def run():
     for instance in profiles:
-        print(instance)
-        #open
-        #load supreme
-        #refreshen
-        #clicky
-        #clicky clicky filly profiley
-        #if failed go back baby
+        task = threading.Thread(target = doIt, args = (instance,))
+        task.start()
 
 readProfile()
-printProfile()
+run()
 #make some gui to go between add, read, delete, and run.

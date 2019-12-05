@@ -1,7 +1,7 @@
-itemName = "pp"  # required
-size = "poopoo"  # required
-itemColor = "tits"  # required
-itemType = "yeet"  # required # example: pants
+itemName = "Anorak"  # required
+size = "Small"  # required
+itemColor = "Red"  # required
+itemType = "jackets"  # required # example: pants
 
 name = "Yo"
 email = "Mama@gmail.com"
