@@ -1,3 +1,4 @@
+#import SupremeBot
 from os import walk
 from os import path
 
@@ -35,13 +36,10 @@ def printProfile():
 def run():
     for instance in profiles:
         print(instance)
-        #open
-        #load supreme
-        #refreshen
-        #clicky
-        #clicky clicky filly profiley
-        #if failed go back baby
+        #SupremeBot.doIt(instance)
 
-readProfile()
+print("Check?")
+print(profiles)
 printProfile()
+run()
 #make some gui to go between add, read, delete, and run.
