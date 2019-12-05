@@ -1,7 +1,7 @@
-itemName = "profile 2"  # required
-size = "profile 2"  # required
-itemColor = "profile 2" # required
-itemType = "profile 2"  # required # example: pants
+itemName = "Disturbed"  # required
+size = "Large"  # required
+itemColor = "Violet" # required
+itemType = "sweatshirts"  # required # example: pants
 
 name = "Yo"
 email = "Mama@gmail.com"
