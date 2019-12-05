@@ -1,7 +1,7 @@
-itemName = "Anorak"  # required
-size = "Small"  # required
-itemColor = "Red"  # required
-itemType = "jackets"  # required # example: pants
+itemName = "Crew"  # required
+size = "1"  # required
+itemColor = "White" # required
+itemType = "accessories"  # required # example: pants
 
 name = "Yo"
 email = "Mama@gmail.com"

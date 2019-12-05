@@ -1,7 +1,7 @@
-itemName = "Disturbed"  # required
-size = "Large"  # required
-itemColor = "Violet" # required
-itemType = "sweatshirts"  # required # example: pants
+itemName = "Crew"  # required
+size = "1"  # required
+itemColor = "White" # required
+itemType = "accessories"  # required # example: pants
 
 name = "Yo"
 email = "Mama@gmail.com"
