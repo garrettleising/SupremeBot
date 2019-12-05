@@ -3,7 +3,7 @@ size = "1"  # required
 itemColor = "White" # required
 itemType = "accessories"  # required # example: pants
 
-name = "Yo"
+name = "Profile 2"
 email = "Mama@gmail.com"
 telephone = "5104206969"
 address = "551 Stevenson Service Road"

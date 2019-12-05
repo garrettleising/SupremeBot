@@ -10,7 +10,6 @@ from datetime import datetime
 from pytz import timezone
 
 def doIt(profile):
-    print(profile["name"])
     itemName = profile["itemName"]
     size = profile["size"]
     itemColor = profile["itemColor"]
@@ -40,14 +39,11 @@ def doIt(profile):
     pacific = timezone('US/Pacific')
     USPacific_time = datetime.now(pacific)
 
-    print(USPacific_time.strftime('%H:%M:%S'))
-
     # waits for the correct time to run the bot
     while (USPacific_time.strftime('%H:%M:%S') != "07:59:25" and timeCycle):
         time.sleep(0.5)
         USPacific_time = datetime.now(pacific)
 
-    print(USPacific_time.strftime('%H:%M:%S'))
 
     # Removes images from site
     options = webdriver.ChromeOptions()
@@ -58,29 +54,28 @@ def doIt(profile):
     # driver = webdriver.Chrome(chrome_path)
     driver.get(linkToStore)
 
+    t0 = time.time()
+    print("Profile: " + name + " fetching at t= " + str(time.time() - t0))
+
     # consantly checks for the item and refreshes the page
 
+    #between HERE
     loop = True #Don't change ever
+    hrefList = []
     while loop:
         productNames = driver.find_elements_by_class_name("name-link")
         for option in productNames:
             if re.search(itemName, option.text, re.IGNORECASE):
-                print(option.text)
-                option.click()
-                loop = False
-                break
+                newSearch = option.find_element_by_xpath('../../div[2]/a')
+                if re.search(itemColor, newSearch.text, re.IGNORECASE):
+                    print("Profile: " + name + " picking up: " + option.text + " in the color: " + newSearch.text)
+                    option.click()
+                    loop = False
+                    break
         time.sleep(1)
         driver.refresh()
 
-    try:
-        colorButtons = driver.find_elements_by_tag_name("button")
-        for option in colorButtons:
-            print(option.get_attribute("data-style-name"))
-            if re.search(itemColor, option.get_attribute("data-style-name"), re.IGNORECASE):
-                driver.get(linkToSupreme + option.get_attribute("data-url"))
-                break
-    except:
-        print("Color Option Unavailable")
+    #AND HERE
 
     # tries to select a size option if there is one
     try:
@@ -88,6 +83,7 @@ def doIt(profile):
         all_sizeOptions = sizeOptions.find_elements_by_tag_name("option")
         for option in all_sizeOptions:
             if re.search(size, option.text, re.IGNORECASE):
+                print("Profile: " + name + " selected size: " + option.text)
                 option.click()
                 break
     except:
@@ -151,8 +147,11 @@ def doIt(profile):
     vval.send_keys(cvv)
     iCheckHelper.click()
 
+    print("Profile: " + name + " checkout complete at t= " + str(time.time() - t0))
+
     # 30 mins of sleeping
-    time.sleep(1800)
-    assert "No results found." not in driver.page_source
+    time.sleep(10)
+    # assert "No results found." not in driver.page_source
+    # click pay
     driver.close()
 
