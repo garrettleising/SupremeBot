@@ -59,7 +59,6 @@ def doIt(profile):
 
     # consantly checks for the item and refreshes the page
 
-    #between HERE
     loop = True #Don't change ever
     hrefList = []
     while loop:
@@ -67,15 +66,13 @@ def doIt(profile):
         for option in productNames:
             if re.search(itemName, option.text, re.IGNORECASE):
                 newSearch = option.find_element_by_xpath('../../div[2]/a')
-                if re.search(itemColor, newSearch.text, re.IGNORECASE):
+                if newSearch.text == itemColor:
                     print("Profile: " + name + " picking up: " + option.text + " in the color: " + newSearch.text)
                     option.click()
                     loop = False
                     break
         time.sleep(1)
         driver.refresh()
-
-    #AND HERE
 
     # tries to select a size option if there is one
     try:
