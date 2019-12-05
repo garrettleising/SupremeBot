@@ -33,7 +33,7 @@ def doIt(profile):
     linkToSupreme = "https://www.supremenewyork.com"
     linkToStore = "https://www.supremenewyork.com/shop/all/" + itemType
 
-    chrome_path = r'D:\Coding\SupremeBot\Drivers\chromedriver.exe'
+    chrome_path = r'.\Drivers\chromedriver.exe'
 
     timeCycle = False  # True if you want the bot to wait for a specific time//False otherwise
 
