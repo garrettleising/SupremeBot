@@ -66,7 +66,7 @@ def doIt(profile):
         for option in productNames:
             if re.search(itemName, option.text, re.IGNORECASE):
                 newSearch = option.find_element_by_xpath('../../div[2]/a')
-                if newSearch.text == itemColor:
+                if newSearch.text.lower() == itemColor.lower():
                     print("Profile: " + name + " picking up: " + option.text + " in the color: " + newSearch.text)
                     option.click()
                     loop = False
@@ -84,7 +84,7 @@ def doIt(profile):
                 option.click()
                 break
     except:
-        print("No size Option")
+        print("Profile: " + name + " no size option")
 
 
     # Waits for submit and checkout button to appear and clicks them
