@@ -23,5 +23,5 @@ $python Run.py
 
 ## Testing:
 
-- This feature can be disabled in SupremeBot.py on line 37
+- Time feature can be disabled in SupremeBot.py on line 37
 - The template can be used as is for testing
