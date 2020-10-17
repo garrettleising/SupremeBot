@@ -14,6 +14,7 @@
 ```
 $cd SupremeBot
 $pip install -r ./requirements.txt
+$cd src
 $python Run.py
 ```
 
