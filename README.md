@@ -1,5 +1,5 @@
 # SupremeBot
-#### Bot that grabs supreme items
+#### Bot that utilizes Selenium to grab Supreme items
 
 # Prerequisites
 
