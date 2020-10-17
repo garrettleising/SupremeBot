@@ -1,0 +1,19 @@
+itemName = "Pocket"  # required
+size = "Large"  # required
+itemColor = "White" # required
+itemType = "tops_sweaters"  # required 
+#examples: jackets, shirts, tops_sweaters, sweatshirts, t-shirts, hats, bags, accessories, shoes, skate
+
+name = "Profile 1"
+email = "@gmail.com"
+telephone = ""
+address = ""
+aptUnitEtc = ""
+zipcode = ""
+city = ""
+state = "CA" # must be state initials
+country = "USA"
+creditCardNumber = ""
+experationMonth = ""
+experationYear = ""
+cvv = ""

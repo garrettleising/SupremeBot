@@ -32,9 +32,9 @@ def doIt(profile):
     linkToSupreme = "https://www.supremenewyork.com"
     linkToStore = "https://www.supremenewyork.com/shop/all/" + itemType
 
-    chrome_path = r'.\Drivers\chromedriver.exe'
+    chrome_path = r'./Drivers/chromedriver'
 
-    timeCycle = False  # True if you want the bot to wait for a specific time//False otherwise
+    timeCycle = True  # True if you want the bot to wait for a specific time//False otherwise
 
     pacific = timezone('US/Pacific')
     USPacific_time = datetime.now(pacific)
@@ -43,6 +43,7 @@ def doIt(profile):
     while (USPacific_time.strftime('%H:%M:%S') != "07:59:25" and timeCycle):
         time.sleep(0.5)
         USPacific_time = datetime.now(pacific)
+        print(USPacific_time)
 
 
     # Removes images from site
