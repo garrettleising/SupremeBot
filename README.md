@@ -12,10 +12,10 @@
 # Running Bot:
 
 ```
-$cd SupremeBot
-$pip install -r ./requirements.txt
-$cd src
-$python run.py
+$ cd SupremeBot
+$ pip install -r ./requirements.txt
+$ cd src
+$ python run.py
 ```
 
 ## Notes:
