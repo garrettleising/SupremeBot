@@ -32,9 +32,9 @@ def doIt(profile):
     linkToSupreme = "https://www.supremenewyork.com"
     linkToStore = "https://www.supremenewyork.com/shop/all/" + itemType
 
-    chrome_path = r'./Drivers/chromedriver'
+    chrome_path = r'../Drivers/chromedriver'
 
-    timeCycle = True  # True if you want the bot to wait for a specific time//False otherwise
+    timeCycle = False  # True if you want the bot to wait for a specific time//False otherwise
 
     pacific = timezone('US/Pacific')
     USPacific_time = datetime.now(pacific)
@@ -148,7 +148,8 @@ def doIt(profile):
     print("Profile: " + name + " checkout complete at t= " + str(time.time() - t0))
 
     # 30 mins of sleeping
-    time.sleep(10)
+    time.sleep(1800)
+
     # assert "No results found." not in driver.page_source
     # click pay
     driver.close()

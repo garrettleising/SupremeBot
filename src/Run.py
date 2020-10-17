@@ -20,7 +20,7 @@ def readFile(toRead):
 
 #readProfile will fetch all in the .\Profiles folder.
 def readProfile():
-    for root, dirs, files in walk("./Profiles"):
+    for root, dirs, files in walk("../Profiles"):
         #dirs is any folders
         for name in files:
             f = open(path.join(root,name), "r")
